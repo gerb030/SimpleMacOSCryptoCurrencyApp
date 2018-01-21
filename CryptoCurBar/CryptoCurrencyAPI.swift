@@ -9,7 +9,7 @@ class CryptoCurrencyAPI {
         let escapedCurrency = currency.addingPercentEncoding(withAllowedCharacters: CharacterSet.urlQueryAllowed)
 
         let url = URL(string: "\(BASE_URL)?fsym=\(escapedCurrency!)&tsyms=EUR")
-        NSLog("\(BASE_URL)?fsym=\(escapedCurrency!)&tsyms=EUR")
+        //NSLog("\(BASE_URL)?fsym=\(escapedCurrency!)&tsyms=EUR")
         let task = session.dataTask(with: url!) { data, response, err in
             // first check for a hard error
             if let error = err {
@@ -42,8 +42,15 @@ class CryptoCurrencyAPI {
             return nil
         }
         
+        var formattedPrice: String
+        let valueRetrieved = json["EUR"]
+        if (valueRetrieved != nil) {
+            formattedPrice = String(format: "%.3f", valueRetrieved as! Float)
+        } else {
+            formattedPrice = "error!"
+        }
         let crypto = CryptoPrice(
-            currentPriceEUR: json["EUR"] as! Float
+            currentPriceEUR: formattedPrice
         )
         
         return crypto

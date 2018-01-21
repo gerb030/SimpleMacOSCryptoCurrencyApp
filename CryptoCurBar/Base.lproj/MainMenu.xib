@@ -15,7 +15,10 @@
         <customObject id="YLy-65-1bz" customClass="NSFontManager"/>
         <customObject id="ERP-jZ-YmI" customClass="StatusMenuController" customModule="CryptoCurBar" customModuleProvider="target">
             <connections>
-                <outlet property="statusMenu" destination="OYh-oF-8Ac" id="c7i-wp-MQy"/>
+                <outlet property="currecyClicked" destination="SUh-Jo-w56" id="2mf-Ip-Cj7"/>
+                <outlet property="defaultCurrencyPicked" destination="Zg8-cU-AVt" id="MfB-Ll-6gJ"/>
+                <outlet property="quitClicked" destination="Nuu-OV-eCJ" id="CbK-ZJ-mzO"/>
+                <outlet property="statusMenu" destination="OYh-oF-8Ac" id="cJg-tl-vJf"/>
                 <outlet property="updateClicked" destination="HcN-wW-yp7" id="8t3-Sz-qOk"/>
             </connections>
         </customObject>
@@ -27,6 +30,99 @@
                         <action selector="updateClicked:" target="ERP-jZ-YmI" id="Ya6-js-uEr"/>
                     </connections>
                 </menuItem>
+                <menuItem isSeparatorItem="YES" id="vRP-vC-RNF"/>
+                <menuItem title="Default show" id="udz-ni-FBb">
+                    <modifierMask key="keyEquivalentModifierMask"/>
+                    <menu key="submenu" title="Default show" id="DOe-jw-ihD">
+                        <items>
+                            <menuItem title="0x" id="hJo-lx-NfY">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <connections>
+                                    <action selector="defaultCurrencyPicked:" target="ERP-jZ-YmI" id="KFo-yn-qBI"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="AppCoin" id="H2S-gF-uk9">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <connections>
+                                    <action selector="defaultCurrencyPicked:" target="ERP-jZ-YmI" id="bqo-g2-PPn"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="Bitcoin" id="Zg8-cU-AVt">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <connections>
+                                    <action selector="defaultCurrencyPicked:" target="ERP-jZ-YmI" id="JCM-Ap-JQB"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="Bitcoin Cash" id="SUh-Jo-w56">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <connections>
+                                    <action selector="defaultCurrencyPicked:" target="ERP-jZ-YmI" id="0CS-Db-IV7"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="Cardano" id="McX-nG-0X6">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <connections>
+                                    <action selector="defaultCurrencyPicked:" target="ERP-jZ-YmI" id="fMS-uj-1VA"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="Ethereum" id="xF2-dT-blX">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <connections>
+                                    <action selector="defaultCurrencyPicked:" target="ERP-jZ-YmI" id="rKR-4P-Blx"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="Golem" id="8oK-uY-UN8">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <connections>
+                                    <action selector="defaultCurrencyPicked:" target="ERP-jZ-YmI" id="7eg-hJ-Q4f"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="Gulden" id="UU8-IO-LrY">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <connections>
+                                    <action selector="defaultCurrencyPicked:" target="ERP-jZ-YmI" id="plW-35-Jhw"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="Litecoin" id="WhL-PJ-h14">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <connections>
+                                    <action selector="defaultCurrencyPicked:" target="ERP-jZ-YmI" id="7Mz-CX-xW1"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="Neo" id="X3C-4M-meX">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <connections>
+                                    <action selector="defaultCurrencyPicked:" target="ERP-jZ-YmI" id="I7q-dL-g4D"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="Network Request" id="hwo-m2-fCb">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <connections>
+                                    <action selector="defaultCurrencyPicked:" target="ERP-jZ-YmI" id="vQx-CJ-Uth"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="Ripple" id="a0h-bs-PJu">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <connections>
+                                    <action selector="defaultCurrencyPicked:" target="ERP-jZ-YmI" id="U1f-GU-Sw8"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="Stellar" id="wZQ-c0-ccj">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <connections>
+                                    <action selector="defaultCurrencyPicked:" target="ERP-jZ-YmI" id="euH-EO-LfR"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="Verge" id="NLJ-c7-DLl">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <connections>
+                                    <action selector="defaultCurrencyPicked:" target="ERP-jZ-YmI" id="CPO-hI-VUo"/>
+                                </connections>
+                            </menuItem>
+                        </items>
+                    </menu>
+                </menuItem>
+                <menuItem isSeparatorItem="YES" id="bZM-Zg-SFi"/>
                 <menuItem title="Quit" id="Nuu-OV-eCJ">
                     <modifierMask key="keyEquivalentModifierMask"/>
                     <connections>
@@ -34,7 +130,7 @@
                     </connections>
                 </menuItem>
             </items>
-            <point key="canvasLocation" x="138.5" y="155.5"/>
+            <point key="canvasLocation" x="89.5" y="88.5"/>
         </menu>
     </objects>
 </document>
