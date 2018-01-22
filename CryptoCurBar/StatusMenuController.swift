@@ -15,6 +15,9 @@ import Cocoa
 class StatusMenuController: NSObject {
     @IBOutlet weak var statusMenu: NSMenu!
     @IBOutlet weak var quitClicked: NSMenuItem!
+    
+    var timer: Timer!
+    
     var selectedCurrency = "ETH"
     
     let cryptoCurrencyAPI = CryptoCurrencyAPI()
@@ -29,12 +32,13 @@ class StatusMenuController: NSObject {
         statusItem.menu = statusMenu
         
         updateCryptoPrice()
+        timer?.invalidate()   // just in case you had existing `NSTimer`, `invalidate` it before we lose our reference to it
+        timer = Timer.scheduledTimer(timeInterval: 60.0, target: self, selector: #selector(updateCryptoPrice), userInfo: nil, repeats: true)
     }
 
-    func updateCryptoPrice() {
+    @objc func updateCryptoPrice() {
         cryptoCurrencyAPI.fetchCrypto(self.selectedCurrency) { cryptoPrice in
             self.statusItem.title = "\(self.selectedCurrency) €\(cryptoPrice.currentPriceEUR)"
-            
         }
     }
     
@@ -43,6 +47,7 @@ class StatusMenuController: NSObject {
     }
 
     @IBAction func quitClicked(sender: NSMenuItem) {
+        timer?.invalidate()
         NSApplication.shared.terminate(self)
     }
     
